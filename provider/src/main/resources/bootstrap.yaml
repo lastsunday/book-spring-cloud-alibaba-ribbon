@@ -1,0 +1,21 @@
+server:
+  port: "${RIBBON_SERVER_PORT:8069}"
+spring:
+  application:
+    name: ribbon-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: f0f2ef4d-ef19-481d-ab05-501dc330e78f
+        group: ribbon-provider
+dubbo:
+  scan:
+    base-packages: com.github.lastsunday.cloud
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://127.0.0.1:8848

@@ -1,0 +1,19 @@
+server:
+  port: 7889
+spring:
+  application:
+    name: ribbon-consumer
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: f0f2ef4d-ef19-481d-ab05-501dc330e78f
+        group: ribbon-provider
+dubbo:
+  protocol:
+    name: dubbo
+    port: 26734
+  registry:
+    address: nacos://127.0.0.1:8848
